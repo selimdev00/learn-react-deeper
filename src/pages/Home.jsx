@@ -19,6 +19,7 @@ const StyledGridItem = styled.div`
   padding: 10px;
   font-size: 14px;
   text-align: center;
+  background: white;
 `;
 
 function HomePage() {
