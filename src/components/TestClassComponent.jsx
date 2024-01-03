@@ -2,6 +2,14 @@ import { Component } from "react";
 
 import ThemeContext from "../contexts/Theme";
 
+import {
+  StyledButton,
+  StyledHighlightedText,
+  StyledText,
+  StyledTitle,
+  StyledWrapper,
+} from "../styles/TestBlockStyles";
+
 class TestClassComponent extends Component {
   static contextType = ThemeContext;
 
@@ -10,15 +18,31 @@ class TestClassComponent extends Component {
     const className = "button-" + theme;
 
     return (
-      <div>
-        <h1>Test</h1>
+      <StyledWrapper>
+        <StyledTitle>Test</StyledTitle>
 
-        <p>So this is class component</p>
+        <StyledText>
+          So this is <StyledHighlightedText>class</StyledHighlightedText>{" "}
+          component
+        </StyledText>
 
-        <p>Theme context: {theme}</p>
+        <StyledText>
+          Theme context: <StyledHighlightedText>{theme}</StyledHighlightedText>
+        </StyledText>
 
-        <button className={className}>Click</button>
-      </div>
+        <StyledText>
+          Styled with:{" "}
+          <StyledHighlightedText>styled-components</StyledHighlightedText>{" "}
+          exported with a{" "}
+          <StyledHighlightedText>single exported file</StyledHighlightedText>
+        </StyledText>
+
+        <StyledText>
+          And that's <StyledHighlightedText>cool</StyledHighlightedText>
+        </StyledText>
+
+        <StyledButton className={className}>Click</StyledButton>
+      </StyledWrapper>
     );
   }
 }
