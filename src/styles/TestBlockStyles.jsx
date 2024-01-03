@@ -21,8 +21,8 @@ const StyledTitle = styled.h1`
 const StyledButton = styled.button`
   background-color: ${color};
   color: white;
-  font-size: 2em;
-  display: block;
+  font-size: 1.5em;
+  display: inline-block;
   margin: 1em auto;
   padding: 0.25em 1em;
   border: 2px solid ${color};
@@ -47,10 +47,19 @@ const StyledHighlightedText = styled.span`
   font-weight: bold;
 `;
 
+const StyledBlock = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  font-size: 14px;
+`;
+
 export {
   StyledWrapper,
   StyledTitle,
   StyledButton,
   StyledText,
   StyledHighlightedText,
+  StyledBlock,
 };
