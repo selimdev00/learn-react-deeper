@@ -1,12 +1,11 @@
 import TestClassComponent from "./components/TestClassComponent";
-import { useContext, useState } from "react";
-import ThemeContext from "./contexts/Theme";
+import { useState } from "react";
 import TestFunctionComponent from "./components/TestFunctionComponent";
 
 import styled from "styled-components";
 import DefaultLayout from "./layouts/Default";
 import { StyledButton, StyledText } from "./styles/TestBlockStyles";
-import ErrorBoundary from "./components/ErrorBoundary";
+import ErrorBoundary from "components/ErrorBoundary";
 
 const StyledGrid = styled.div`
   display: grid;
@@ -22,10 +21,9 @@ const StyledGridItem = styled.div`
   text-align: center;
 `;
 
-function App() {
-  const theme = useContext(ThemeContext);
-
-  const [showClassComponent, setShowClassComponent] = useState(true);
+function HomePage() {
+  const [showClassComponent, setShowClassComponent] = useState(false);
+  const [showFunctionComponent, setShowFunctionComponent] = useState(true);
 
   return (
     <DefaultLayout>
@@ -54,14 +52,28 @@ function App() {
               </ErrorBoundary>
             )}
           </StyledGridItem>
-          <TestFunctionComponent
-            title={"function prop title"}
-            content={"function prop content"}
-          />
+
+          <StyledGridItem>
+            <span>
+              Toggler:{" "}
+              <StyledButton
+                onClick={() => setShowFunctionComponent(!showFunctionComponent)}
+              >
+                Toggle component mount
+              </StyledButton>
+            </span>
+
+            {showFunctionComponent && (
+              <TestFunctionComponent
+                title={"function prop title"}
+                content={"function prop content"}
+              />
+            )}
+          </StyledGridItem>
         </StyledGrid>
       </div>
     </DefaultLayout>
   );
 }
 
-export default App;
+export default HomePage;

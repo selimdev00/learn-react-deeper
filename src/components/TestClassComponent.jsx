@@ -116,12 +116,20 @@ class TestClassComponent extends Component {
   };
 
   render() {
-    throw "something";
-
     const theme = this.context;
 
     return (
       <StyledWrapper>
+        <StyledText>
+          Reactive values handled with{" "}
+          <StyledHighlightedText as={"pre"}>
+            componentDidMount, componentDidUpdate, componentDidUnmount
+          </StyledHighlightedText>
+          <p>-</p>
+          <StyledHighlightedText as={"pre"}>useEffect</StyledHighlightedText>
+          <p>takes less code and more developer friendly</p>
+        </StyledText>
+
         <StyledBlock>
           <StyledText>Server:</StyledText>
 
@@ -162,7 +170,10 @@ class TestClassComponent extends Component {
         </StyledText>
 
         <StyledText>
-          And that's <StyledHighlightedText>cool</StyledHighlightedText>
+          And that's <StyledHighlightedText>cool</StyledHighlightedText>, but we{" "}
+          <StyledHighlightedText>should not</StyledHighlightedText> use{" "}
+          <StyledHighlightedText>Class Components</StyledHighlightedText> in
+          nowadays projects
         </StyledText>
 
         <StyledText>

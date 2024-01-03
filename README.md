@@ -18,7 +18,7 @@ Welcome to **learn-react-deeper**, your journey into mastering React in depth! T
 1. Clone the repository: `git clone https://github.com/your-username/learn-react-deeper.git`
 2. Install dependencies: `npm install`
 3. Choose a specific topic or follow the entire curriculum in the provided order.
-4. Run the examples and exercises with `npm start`.
+4. Run the examples and exercises with `npm dev`.
 5. Have fun learning and experimenting with React concepts!
 
 ## 🤝 Contributions
