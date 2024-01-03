@@ -28,6 +28,7 @@ const StyledButton = styled.button`
   border: 2px solid ${color};
   border-radius: 3px;
   transition: 0.3s ease-in-out;
+  text-decoration: none;
 
   &:hover {
     background-color: white;

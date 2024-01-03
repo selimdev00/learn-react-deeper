@@ -6,13 +6,18 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
 
-import ThemeContext from "./contexts/Theme";
-import HomePage from "./pages/Home";
+import ThemeContext from "contexts/Theme";
+import HomePage from "pages/Home";
+import NotFound from "components/Errors/NotFound";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "*",
+    element: <NotFound />,
   },
 ]);
 

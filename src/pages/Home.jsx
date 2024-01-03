@@ -5,7 +5,7 @@ import TestFunctionComponent from "components/TestFunctionComponent";
 import styled from "styled-components";
 import DefaultLayout from "layouts/Default";
 import { StyledButton, StyledText } from "styles/TestBlockStyles";
-import ErrorBoundary from "components/ErrorBoundary";
+import ErrorBoundary from "components/Errors/ErrorBoundary";
 
 const StyledGrid = styled.div`
   display: grid;

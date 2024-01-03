@@ -21,6 +21,8 @@ const StyledNav = styled.ul`
 
 const StyledNavItem = styled.li`
   cursor: pointer;
+  color: white;
+  text-decoration: none;
 
   &:hover {
     text-decoration: underline;
@@ -48,7 +50,9 @@ function Header() {
       <div>
         <StyledNav>
           {nav.map((item) => (
-            <StyledNavItem key={item.id}>{item.title}</StyledNavItem>
+            <StyledNavItem as={"a"} href={item.href} key={item.id}>
+              {item.title}
+            </StyledNavItem>
           ))}
         </StyledNav>
       </div>
