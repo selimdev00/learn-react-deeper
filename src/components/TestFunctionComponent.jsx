@@ -12,6 +12,22 @@ import {
 
 const name = "Function Component";
 
+function createConnection(serverUrl, roomId) {
+  // A real implementation would actually connect to the server
+  return {
+    connect() {
+      console.log(
+        `✅[${name}]: Connected to server: ${serverUrl}, room: ${roomId}`,
+      );
+    },
+    disconnect() {
+      console.log(
+        `❌[${name}]: Disconnected from server: ${serverUrl}, room: ${roomId}`,
+      );
+    },
+  };
+}
+
 function TestFunctionComponent(props) {
   const theme = useContext(ThemeContext);
 
@@ -22,37 +38,26 @@ function TestFunctionComponent(props) {
   const roomRef = createRef();
   const serverRef = createRef();
 
-  const setupConnection = () => {
-    console.log(
-      `✅[${name}]: Connected to server: ${serverUrl}, room: ${roomId}`,
-    );
-  };
-
-  const cancelConnection = () => {
-    console.log(
-      `❌[${name}]: Disconnected from server: ${serverUrl}, room: ${roomId}`,
-    );
-  };
-
   useEffect(() => {
-    setupConnection();
+    const connection = createConnection(serverUrl, roomId);
+
+    connection.connect();
 
     return () => {
-      cancelConnection();
+      connection.disconnect();
     };
   }, [roomId, serverUrl]);
 
   return (
     <StyledWrapper>
-      <StyledText>
-        Reactive values handled with{" "}
-        <StyledHighlightedText as={"pre"}>useEffect</StyledHighlightedText>
-        <p>-</p>
-        <StyledHighlightedText as={"pre"}>
-          componentDidMount, componentDidUpdate, componentDidUnmount
-        </StyledHighlightedText>
-        <p>takes more code and less developer friendly</p>
-      </StyledText>
+      <StyledText>Reactive values handled with</StyledText>
+      <StyledHighlightedText as={"pre"}>useEffect</StyledHighlightedText>
+      <StyledText>-</StyledText>
+
+      <StyledHighlightedText as={"pre"}>
+        componentDidMount, componentDidUpdate, componentDidUnmount
+      </StyledHighlightedText>
+      <StyledText>takes more code and less developer friendly</StyledText>
 
       <StyledBlock>
         <StyledText>Server:</StyledText>

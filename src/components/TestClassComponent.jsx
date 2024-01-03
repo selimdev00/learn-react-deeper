@@ -120,15 +120,13 @@ class TestClassComponent extends Component {
 
     return (
       <StyledWrapper>
-        <StyledText>
-          Reactive values handled with{" "}
-          <StyledHighlightedText as={"pre"}>
-            componentDidMount, componentDidUpdate, componentDidUnmount
-          </StyledHighlightedText>
-          <p>-</p>
-          <StyledHighlightedText as={"pre"}>useEffect</StyledHighlightedText>
-          <p>takes less code and more developer friendly</p>
-        </StyledText>
+        <StyledText>Reactive values handled with </StyledText>
+        <StyledHighlightedText as={"pre"}>
+          componentDidMount, componentDidUpdate, componentDidUnmount
+        </StyledHighlightedText>
+        <StyledText>-</StyledText>
+        <StyledHighlightedText as={"pre"}>useEffect</StyledHighlightedText>
+        <StyledText>takes less code and more developer friendly</StyledText>
 
         <StyledBlock>
           <StyledText>Server:</StyledText>

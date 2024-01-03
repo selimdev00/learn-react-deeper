@@ -1,10 +1,10 @@
-import TestClassComponent from "./components/TestClassComponent";
+import TestClassComponent from "components/TestClassComponent";
 import { useState } from "react";
-import TestFunctionComponent from "./components/TestFunctionComponent";
+import TestFunctionComponent from "components/TestFunctionComponent";
 
 import styled from "styled-components";
-import DefaultLayout from "./layouts/Default";
-import { StyledButton, StyledText } from "./styles/TestBlockStyles";
+import DefaultLayout from "layouts/Default";
+import { StyledButton, StyledText } from "styles/TestBlockStyles";
 import ErrorBoundary from "components/ErrorBoundary";
 
 const StyledGrid = styled.div`
