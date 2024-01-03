@@ -8,12 +8,18 @@ import reportWebVitals from "./reportWebVitals";
 
 import ThemeContext from "contexts/Theme";
 import HomePage from "pages/Home";
+import AboutPage from "pages/About";
 import NotFound from "components/Errors/NotFound";
+import DefaultLayout from "layouts/Default";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <HomePage />,
+  },
+  {
+    path: "/about",
+    element: <AboutPage />,
   },
   {
     path: "*",
@@ -25,7 +31,9 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <ThemeContext.Provider value="dark">
-      <RouterProvider router={router} />
+      <DefaultLayout>
+        <RouterProvider router={router} />
+      </DefaultLayout>
     </ThemeContext.Provider>
   </React.StrictMode>,
 );

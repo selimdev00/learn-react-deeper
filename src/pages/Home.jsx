@@ -3,7 +3,6 @@ import { useState } from "react";
 import TestFunctionComponent from "components/TestFunctionComponent";
 
 import styled from "styled-components";
-import DefaultLayout from "layouts/Default";
 import { StyledButton, StyledText } from "styles/TestBlockStyles";
 import ErrorBoundary from "components/Errors/ErrorBoundary";
 
@@ -27,53 +26,51 @@ function HomePage() {
   const [showFunctionComponent, setShowFunctionComponent] = useState(true);
 
   return (
-    <DefaultLayout>
-      <div className="App">
-        <StyledGrid>
-          <StyledGridItem>
-            <span>
-              Toggler:{" "}
-              <StyledButton
-                onClick={() => setShowClassComponent(!showClassComponent)}
-              >
-                Toggle component mount
-              </StyledButton>
-            </span>
+    <div className="App">
+      <StyledGrid>
+        <StyledGridItem>
+          <span>
+            Toggler:{" "}
+            <StyledButton
+              onClick={() => setShowClassComponent(!showClassComponent)}
+            >
+              Toggle component mount
+            </StyledButton>
+          </span>
 
-            {showClassComponent && (
-              <ErrorBoundary
-                fallback={
-                  <StyledText>Error fallback ui for class component</StyledText>
-                }
-              >
-                <TestClassComponent
-                  title={"class prop title"}
-                  content={"class prop content"}
-                />
-              </ErrorBoundary>
-            )}
-          </StyledGridItem>
-
-          <StyledGridItem>
-            <span>
-              Toggler:{" "}
-              <StyledButton
-                onClick={() => setShowFunctionComponent(!showFunctionComponent)}
-              >
-                Toggle component mount
-              </StyledButton>
-            </span>
-
-            {showFunctionComponent && (
-              <TestFunctionComponent
-                title={"function prop title"}
-                content={"function prop content"}
+          {showClassComponent && (
+            <ErrorBoundary
+              fallback={
+                <StyledText>Error fallback ui for class component</StyledText>
+              }
+            >
+              <TestClassComponent
+                title={"class prop title"}
+                content={"class prop content"}
               />
-            )}
-          </StyledGridItem>
-        </StyledGrid>
-      </div>
-    </DefaultLayout>
+            </ErrorBoundary>
+          )}
+        </StyledGridItem>
+
+        <StyledGridItem>
+          <span>
+            Toggler:{" "}
+            <StyledButton
+              onClick={() => setShowFunctionComponent(!showFunctionComponent)}
+            >
+              Toggle component mount
+            </StyledButton>
+          </span>
+
+          {showFunctionComponent && (
+            <TestFunctionComponent
+              title={"function prop title"}
+              content={"function prop content"}
+            />
+          )}
+        </StyledGridItem>
+      </StyledGrid>
+    </div>
   );
 }
 

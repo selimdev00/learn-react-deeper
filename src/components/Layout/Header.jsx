@@ -1,5 +1,7 @@
 import styled from "styled-components";
 
+import { NavLink } from "react-router-dom";
+
 const color = "purple";
 
 const StyledWrapper = styled.div`
@@ -11,6 +13,8 @@ const StyledWrapper = styled.div`
   padding: 2em;
   background-color: ${color};
   color: white;
+  position: sticky;
+  top: 0;
 `;
 
 const StyledNav = styled.ul`
@@ -42,7 +46,7 @@ const nav = [
   },
 ];
 
-function Header() {
+export default function Header() {
   return (
     <StyledWrapper>
       <h1>Header (function component)</h1>
@@ -50,14 +54,10 @@ function Header() {
       <div>
         <StyledNav>
           {nav.map((item) => (
-            <StyledNavItem as={"a"} href={item.href} key={item.id}>
-              {item.title}
-            </StyledNavItem>
+            <StyledNavItem key={item.id}>{item.title}</StyledNavItem>
           ))}
         </StyledNav>
       </div>
     </StyledWrapper>
   );
 }
-
-export default Header;
