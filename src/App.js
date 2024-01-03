@@ -4,6 +4,7 @@ import ThemeContext from "./contexts/Theme";
 import TestFunctionComponent from "./components/TestFunctionComponent";
 
 import styled from "styled-components";
+import DefaultLayout from "./layouts/Default";
 
 const StyledGrid = styled.div`
   display: grid;
@@ -15,13 +16,15 @@ function App() {
   const theme = useContext(ThemeContext);
 
   return (
-    <div className="App">
-      <StyledGrid>
-        <TestClassComponent />
+    <DefaultLayout>
+      <div className="App">
+        <StyledGrid>
+          <TestClassComponent />
 
-        <TestFunctionComponent />
-      </StyledGrid>
-    </div>
+          <TestFunctionComponent />
+        </StyledGrid>
+      </div>
+    </DefaultLayout>
   );
 }
 
