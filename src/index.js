@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./assets/styles/main.scss";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import reportWebVitals from "./reportWebVitals";
 
@@ -12,30 +12,19 @@ import AboutPage from "pages/About";
 import NotFound from "components/Errors/NotFound";
 import DefaultLayout from "layouts/Default";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <HomePage />,
-  },
-  {
-    path: "/about",
-    element: <AboutPage />,
-  },
-  {
-    path: "*",
-    element: <NotFound />,
-  },
-]);
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
+  <BrowserRouter>
     <ThemeContext.Provider value="dark">
       <DefaultLayout>
-        <RouterProvider router={router} />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
       </DefaultLayout>
     </ThemeContext.Provider>
-  </React.StrictMode>,
+  </BrowserRouter>,
 );
 
 // If you want to start measuring performance in your app, pass a function

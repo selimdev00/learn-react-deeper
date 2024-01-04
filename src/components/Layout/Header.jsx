@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const color = "purple";
 
@@ -23,7 +23,7 @@ const StyledNav = styled.ul`
   list-style: none;
 `;
 
-const StyledNavItem = styled.li`
+const StyledNavItem = styled(Link)`
   cursor: pointer;
   color: white;
   text-decoration: none;
@@ -54,7 +54,9 @@ export default function Header() {
       <div>
         <StyledNav>
           {nav.map((item) => (
-            <StyledNavItem key={item.id}>{item.title}</StyledNavItem>
+            <StyledNavItem to={item.href} key={item.id}>
+              {item.title}
+            </StyledNavItem>
           ))}
         </StyledNav>
       </div>
