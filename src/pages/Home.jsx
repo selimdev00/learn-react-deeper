@@ -8,6 +8,7 @@ import ErrorBoundary from "components/Errors/ErrorBoundary";
 import TestUseReducer from "components/Tests/TestUseReducer";
 import TestCustomHook from "components/Tests/TestCustomHook";
 import TestTodosWithReducer from "components/Tests/TestTodosWithReducer";
+import TestTodosWithImmerReducer from "components/Tests/TestTodosWithImmerReducer";
 
 const StyledGrid = styled.div`
   display: grid;
@@ -31,6 +32,10 @@ function HomePage() {
   return (
     <div className="App">
       <StyledGrid>
+        <StyledGridItem>
+          <TestTodosWithImmerReducer />
+        </StyledGridItem>
+
         <StyledGridItem>
           <TestTodosWithReducer />
         </StyledGridItem>
