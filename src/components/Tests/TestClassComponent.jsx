@@ -1,6 +1,6 @@
 import { Component, createRef } from "react";
 
-import ThemeContext from "../contexts/Theme";
+import ThemeContext from "contexts/Theme";
 
 import {
   StyledBlock,
@@ -9,7 +9,7 @@ import {
   StyledText,
   StyledTitle,
   StyledWrapper,
-} from "../styles/TestBlockStyles";
+} from "styles/TestBlockStyles";
 
 import PropTypes from "prop-types";
 

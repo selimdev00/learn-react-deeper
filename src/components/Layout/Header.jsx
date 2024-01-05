@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
+import useAuth from "hooks/useAuth";
+
 const color = "purple";
 
 const StyledWrapper = styled.div`
@@ -47,9 +49,13 @@ const nav = [
 ];
 
 export default function Header() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <StyledWrapper>
       <h1>Header (function component)</h1>
+
+      <p>Logged in: {isAuthenticated ? "Yes" : "No"}</p>
 
       <div>
         <StyledNav>

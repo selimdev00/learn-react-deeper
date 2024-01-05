@@ -1,10 +1,13 @@
-import TestClassComponent from "components/TestClassComponent";
+import TestClassComponent from "components/Tests/TestClassComponent";
 import { useState } from "react";
-import TestFunctionComponent from "components/TestFunctionComponent";
+import TestFunctionComponent from "components/Tests/TestFunctionComponent";
 
 import styled from "styled-components";
 import { StyledButton, StyledText } from "styles/TestBlockStyles";
 import ErrorBoundary from "components/Errors/ErrorBoundary";
+import TestUseReducer from "components/Tests/TestUseReducer";
+import TestCustomHook from "components/Tests/TestCustomHook";
+import TestTodosWithReducer from "components/Tests/TestTodosWithReducer";
 
 const StyledGrid = styled.div`
   display: grid;
@@ -28,6 +31,18 @@ function HomePage() {
   return (
     <div className="App">
       <StyledGrid>
+        <StyledGridItem>
+          <TestTodosWithReducer />
+        </StyledGridItem>
+
+        <StyledGridItem>
+          <TestCustomHook />
+        </StyledGridItem>
+
+        <StyledGridItem>
+          <TestUseReducer />
+        </StyledGridItem>
+
         <StyledGridItem>
           <span>
             Toggler:{" "}

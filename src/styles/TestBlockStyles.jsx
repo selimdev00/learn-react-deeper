@@ -18,6 +18,16 @@ const StyledTitle = styled.h1`
   color: ${color};
 `;
 
+const StyledInput = styled.input`
+  font-size: 1.5em;
+  display: inline-block;
+  margin: 1em auto;
+  padding: 0.25em 1em;
+  border: 2px solid ${color};
+  border-radius: 3px;
+  transition: 0.3s ease-in-out;
+`;
+
 const StyledButton = styled.button`
   background-color: ${color};
   color: white;
@@ -60,6 +70,7 @@ export {
   StyledWrapper,
   StyledTitle,
   StyledButton,
+  StyledInput,
   StyledText,
   StyledHighlightedText,
   StyledBlock,

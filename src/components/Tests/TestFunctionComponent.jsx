@@ -1,5 +1,5 @@
 import { createRef, useContext, useEffect, useState } from "react";
-import ThemeContext from "../contexts/Theme";
+import ThemeContext from "contexts/Theme";
 
 import {
   StyledBlock,
@@ -8,7 +8,7 @@ import {
   StyledText,
   StyledTitle,
   StyledWrapper,
-} from "../styles/TestBlockStyles";
+} from "styles/TestBlockStyles";
 
 const name = "Function Component";
 
