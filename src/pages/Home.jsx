@@ -9,6 +9,9 @@ import TestUseReducer from "components/Tests/TestUseReducer";
 import TestCustomHook from "components/Tests/TestCustomHook";
 import TestTodosWithReducer from "components/Tests/TestTodosWithReducer";
 import TestTodosWithImmerReducer from "components/Tests/TestTodosWithImmerReducer";
+import TestWithUseRef from "components/Tests/TestWithUseRef";
+import TestThrottling from "components/Tests/TestThrottling";
+import TestDebounce from "components/Tests/TestDebounce";
 
 const StyledGrid = styled.div`
   display: grid;
@@ -32,6 +35,18 @@ function HomePage() {
   return (
     <div className="App">
       <StyledGrid>
+        <StyledGridItem>
+          <TestDebounce />
+        </StyledGridItem>
+
+        <StyledGridItem>
+          <TestThrottling />
+        </StyledGridItem>
+
+        <StyledGridItem>
+          <TestWithUseRef />
+        </StyledGridItem>
+
         <StyledGridItem>
           <TestTodosWithImmerReducer />
         </StyledGridItem>
