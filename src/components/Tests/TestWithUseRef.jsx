@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   StyledWrapper,
   StyledTitle,
@@ -7,6 +7,7 @@ import {
   StyledButton,
   StyledBlock,
 } from "styles/TestBlockStyles";
+import FormInput from "components/Form/Input";
 
 export default function TestWithUseRef() {
   const count = useRef(0);
@@ -45,6 +46,20 @@ export default function TestWithUseRef() {
 
   const secondsPassed = (now - startTime) / 1000;
 
+  const inputRef = useRef(null);
+
+  function focusInput() {
+    inputRef.current.focus();
+  }
+
+  const renderTimes = useRef(0);
+
+  const [x, setX] = useState(0);
+
+  useEffect(() => {
+    renderTimes.current++;
+  }, [x]);
+
   return (
     <StyledWrapper>
       <StyledTitle>Usage of </StyledTitle>
@@ -64,6 +79,20 @@ export default function TestWithUseRef() {
         <StyledButton onClick={startTimer}>Start</StyledButton>
 
         <StyledButton onClick={stopTimer}>Stop</StyledButton>
+      </StyledBlock>
+
+      <StyledBlock>
+        <FormInput ref={inputRef} label="Input" placeholder={"somethings"} />
+
+        <StyledButton onClick={focusInput}>Focus input</StyledButton>
+      </StyledBlock>
+
+      <StyledBlock>
+        <StyledText>Component re-rendered: {renderTimes.current}</StyledText>
+
+        <StyledButton onClick={() => setX(x + 1)}>Update x</StyledButton>
+
+        <StyledText>x: {x}</StyledText>
       </StyledBlock>
     </StyledWrapper>
   );
