@@ -12,6 +12,7 @@ import TestTodosWithImmerReducer from "components/Tests/TestTodosWithImmerReduce
 import TestWithUseRef from "components/Tests/TestWithUseRef";
 import TestThrottling from "components/Tests/TestThrottling";
 import TestDebounce from "components/Tests/TestDebounce";
+import TestStopPropagation from "components/Tests/TestStopPropagation";
 
 const StyledGrid = styled.div`
   display: grid;
@@ -35,6 +36,10 @@ function HomePage() {
   return (
     <div className="App">
       <StyledGrid>
+        <StyledGridItem>
+          <TestStopPropagation />
+        </StyledGridItem>
+
         <StyledGridItem>
           <TestDebounce />
         </StyledGridItem>
