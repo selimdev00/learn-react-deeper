@@ -9,6 +9,10 @@ const TestHOC = () => {
 
       <StyledText>Person component wrapped with HOC (MoneyProvider)</StyledText>
 
+      <StyledText>
+        It's deprecated though, recommended to use custom hooks
+      </StyledText>
+
       <Person name="John" />
 
       <Person name="Jimmy" />
