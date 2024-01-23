@@ -1,5 +1,5 @@
 import { StyledButton, StyledText } from "styles/TestBlockStyles";
-import MoneyProvider from "components/MoneyProvider";
+import MoneyProvider from "components/HOC/MoneyProvider";
 
 const Person = ({ name, money, addMoney }) => {
   return (

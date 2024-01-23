@@ -38,6 +38,10 @@ function HomePage() {
     <div className="App">
       <StyledGrid>
         <StyledGridItem>
+          <TestCustomHook />
+        </StyledGridItem>
+
+        <StyledGridItem>
           <TestHOC />
         </StyledGridItem>
 
@@ -63,10 +67,6 @@ function HomePage() {
 
         <StyledGridItem>
           <TestTodosWithReducer />
-        </StyledGridItem>
-
-        <StyledGridItem>
-          <TestCustomHook />
         </StyledGridItem>
 
         <StyledGridItem>

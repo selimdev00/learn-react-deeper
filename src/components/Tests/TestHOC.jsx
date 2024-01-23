@@ -1,6 +1,6 @@
 import { StyledWrapper, StyledTitle, StyledText } from "styles/TestBlockStyles";
 
-import Person from "components/Person";
+import Person from "components/HOC/Person";
 
 const TestHOC = () => {
   return (
