@@ -13,6 +13,7 @@ import TestWithUseRef from "components/Tests/TestWithUseRef";
 import TestThrottling from "components/Tests/TestThrottling";
 import TestDebounce from "components/Tests/TestDebounce";
 import TestStopPropagation from "components/Tests/TestStopPropagation";
+import TestHOC from "components/Tests/TestHOC";
 
 const StyledGrid = styled.div`
   display: grid;
@@ -36,6 +37,10 @@ function HomePage() {
   return (
     <div className="App">
       <StyledGrid>
+        <StyledGridItem>
+          <TestHOC />
+        </StyledGridItem>
+
         <StyledGridItem>
           <TestStopPropagation />
         </StyledGridItem>
